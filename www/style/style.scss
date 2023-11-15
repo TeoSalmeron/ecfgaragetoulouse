@@ -5,8 +5,8 @@
 $font : 'IBM Plex Sans', sans-serif;
 $font_condensed : 'IBM Plex Sans Condensed', sans-serif;
 
-$font_size_title : 32px;
-$font_size_paragraph : 24px;
+$font_size_title : 42px;
+$font_size_paragraph : 20px;
 
 // COLORS
 
@@ -25,6 +25,7 @@ $color_2 : #494949;
 // START NAV
 
 #nav {
+    background: #fff;
     padding: 0px 10px;
     display: flex;
     justify-content: space-between;
@@ -81,10 +82,12 @@ $color_2 : #494949;
                 font-size: 1.3rem;
                 color: $color_1;
                 font-weight: 500;
+                transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-                &:visited {
+                &:hover {
                     color: $color_2;
                 }
+
             }
 
         }
@@ -92,6 +95,73 @@ $color_2 : #494949;
 }
 
 // END NAV
+
+// START HOME
+
+.home_header {
+    background-image: url("/img/header_bg.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    padding: 120px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    h1 {
+        font-family: $font;
+        color: #fff;
+        font-size: $font_size_title;
+        -webkit-text-stroke-color: $color_1;
+        -webkit-text-stroke-width: 2px;
+        text-align: center;
+    }
+
+    ul {
+
+        
+        li {
+            font-family: $font_condensed;
+            color: #fff;
+            font-size: $font_size_paragraph;
+            -webkit-text-stroke-color: $color_1;
+            -webkit-text-stroke-width: 1px;
+            font-weight: 600;
+        }
+
+    }
+}
+
+.home_services {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        font-family: $font;
+        color: $color_1;
+        font-size: $font_size_title;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    ul {
+
+        max-width: 700px;
+        
+        li {
+            margin: 20px 0px;
+            font-family: $font_condensed;
+            font-size: $font_size_paragraph;
+            text-align: justify;
+        }
+
+    }
+}
+
+// END HOME
 
 
 
