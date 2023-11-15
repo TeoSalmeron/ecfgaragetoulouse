@@ -26,4 +26,10 @@ class EmployeeController extends Controller
         $response = create_car();
         echo json_encode($response);
     }
+
+    public function delete_review() {
+        require_once ROOT . '/Controllers/functions/delete_review.php';
+        $response = delete_review();
+        echo json_encode($response);
+    }
 }

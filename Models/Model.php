@@ -11,6 +11,18 @@ class Model extends Db
     private $db;
 
     /**
+     * Search all elements from table
+     */
+    public function findAll() {
+        $this->db = Db::getInstance();
+        $stmt = $this->db->prepare("SELECT * FROM $this->table");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
+
+    /**
      * Search for specific elements using attributes
      */
     public function findBy(array $attributes)

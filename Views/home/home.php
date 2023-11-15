@@ -85,3 +85,39 @@
         </li>
     </ul>
 </section>
+
+<section class="home_reviews">
+    <h2>AVIS CLIENTS</h2>
+    <p>
+        Nos clients satisfaits témoignent de notre expertise et de notre dévouement. Découvrez leurs commentaires authentiques sur notre service exceptionnel.
+    </p>
+    <?php
+        foreach($reviews as $r) {
+            ?>
+                <div class="review">
+                    <p class="score">
+                        <?= $r["score"]?>/5
+                    </p>
+                    <small>
+                        <?= $r["date"] ?>
+                    </small>
+                    <p class="comment">
+                        <?= htmlspecialchars_decode($r["comment"]) ?>
+                    </p>
+                    <?php
+                        if(isset($_SESSION["is_connected"]) && $_SESSION["user_role"] === "employee") {
+                            ?>
+                            <form action="" method="post" class="delete_review_forms">
+                                <input type="checkbox" name="id" id="id" value="<?=$r["id"]?>" checked style="display:none">
+                                <button class="button delete_review">
+                                    SUPPRIMER
+                                </button>
+                            </form>
+                            <?php
+                        }
+                    ?>
+                </div>
+            <?php
+        }
+    ?>
+</section>

@@ -1,0 +1,27 @@
+<script>
+    const deleteReviewForms = document.getElementsByClassName("delete_review_forms")
+
+    for (let form of deleteReviewForms) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const formData = new FormData(form)
+            var xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                if(response.error == 1) {
+                    alert(response.msg)
+                } else {
+                    location.reload()
+                }
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+            }
+            xhr.responseType = "json"
+            xhr.open("POST", "/employee/delete_review", true)
+            xhr.send(formData)
+        })
+    }
+
+</script>
