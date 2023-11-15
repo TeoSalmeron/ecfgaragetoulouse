@@ -30,6 +30,11 @@
   cursor: pointer;
 }
 
+.form_status {
+  text-align: center;
+  margin: 20px 0px;
+}
+
 #nav {
   background: #fff;
   padding: 0px 10px;
@@ -158,6 +163,35 @@
   align-items: center;
 }
 .connexion_header form .input_text {
+  margin: 20px 0px;
+}
+
+.admin_pannel {
+  width: 100%;
+  height: auto;
+  padding: 140px 20px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.admin_pannel h2 {
+  color: #BB0102;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.admin_pannel .create_employee {
+  display: flex;
+  flex-direction: column;
+}
+.admin_pannel .create_employee form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin_pannel .create_employee form small {
+  text-align: center;
+}
+.admin_pannel .create_employee form input {
   margin: 20px 0px;
 }
 

@@ -1,0 +1,26 @@
+<script>
+    const createEmployeeForm = document.getElementById("createEmployeeForm")
+    let createEmployeeFormStatus = document.getElementById("createEmployeeFormStatus")
+
+    createEmployeeForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(createEmployeeForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                createEmployeeFormStatus.innerText = response.msg
+                if(response.error == 1) {
+                    createEmployeeFormStatus.style.color = "red"
+                } else {
+                    createEmployeeFormStatus.style.color = "green"
+                }
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/admin/create_employee", true)
+        xhr.send(formData)
+    })
+</script>

@@ -8,7 +8,7 @@ class ConnexionController extends Controller
     {
         $this->render("connexion/connexion", [
             "title" => "Votre espace personnel",
-        ], ["nav", "signin"]);
+        ], ["nav", "sign_in"]);
 
     }
 

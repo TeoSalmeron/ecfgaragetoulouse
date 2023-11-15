@@ -49,10 +49,15 @@ $color_2 : #494949;
     }
 }
 
+.form_status {
+    text-align: center;
+    margin: 20px 0px;
+}
+
 // END UTILITY CLASSES
 
-// START NAV
 
+// START NAV
 #nav {
     background: #fff;
     padding: 0px 10px;
@@ -122,11 +127,10 @@ $color_2 : #494949;
         }
     }
 }
-
 // END NAV
 
-// START HOME
 
+// START HOME
 .home_header {
     background-image: url("/img/header_bg.png");
     background-position: center;
@@ -189,11 +193,10 @@ $color_2 : #494949;
 
     }
 }
-
 // END HOME
 
-// START SIGN IN
 
+// START SIGN IN
 .connexion_header {
     width: 100%;
     height: 600px;
@@ -221,9 +224,44 @@ $color_2 : #494949;
     }
 
 }
-
 // END SIGN IN
 
+
+// START ADMIN PANNEL
+.admin_pannel {
+    width: 100%;
+    height: auto;
+    padding: 140px 20px;
+    font-family: $font;
+
+    h2 {
+        color: $color_1;
+        font-family: $font;
+        font-size: $font_size_title;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .create_employee {
+        display: flex;
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            small {
+                text-align: center;
+            }
+
+            input {
+                margin: 20px 0px;   
+            }
+        }
+    }
+}
+// END ADMIN PANNEL
 
 
 // MEDIA QUERIES
