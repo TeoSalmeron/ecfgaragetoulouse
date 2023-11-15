@@ -121,7 +121,7 @@
 }
 
 .home_services {
-  padding: 50px 20px;
+  padding: 50px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,6 +186,43 @@
 }
 .home_reviews .review button {
   font-size: 1rem;
+}
+
+.home_create_review {
+  padding: 25px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin: auto;
+}
+.home_create_review h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #BB0102;
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.home_create_review p {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  color: #494949;
+  font-size: 20px;
+  text-align: center;
+}
+.home_create_review #createVisitorReviewForm {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home_create_review #createVisitorReviewForm .form_group {
+  margin: 20px 0px;
+}
+.home_create_review #createVisitorReviewForm textarea {
+  margin-bottom: 30px;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .connexion_header {

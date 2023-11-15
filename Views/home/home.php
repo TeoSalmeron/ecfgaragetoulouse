@@ -121,3 +121,30 @@
         }
     ?>
 </section>
+
+<section class="home_create_review">
+    <h2>
+        Déposez votre avis
+    </h2>
+    <p>
+        Partagez votre expérience au garage V.Parrot
+    </p>
+    <form action="" method="post" id="createVisitorReviewForm" accept-charset="utf-8">
+        <p id="createVisitorReviewFormStatus" class="form_status"></p>
+        <div class="form_group">
+            <label for="score">Note :</label>
+            <select name="score" id="score">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select> / 5
+        </div>
+        <label for="comment">Commentaire :</label>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Insérez le commentaire"></textarea>
+        <button type="submit" class="button">
+            VALIDER
+        </button>
+    </form>
+</section>

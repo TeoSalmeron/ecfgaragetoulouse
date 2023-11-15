@@ -18,7 +18,7 @@ class DefaultController extends Controller
             "title" => "Accueil",
             "garage" => $garage,
             "reviews" => $reviews
-        ], ["nav", "delete_review"]);
+        ], ["nav", "delete_review", "create_visitor_review"]);
 
     }
 }

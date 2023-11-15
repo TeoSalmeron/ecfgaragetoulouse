@@ -1,0 +1,26 @@
+<script>
+    const createVisitorReviewForm = document.getElementById("createVisitorReviewForm")
+    let createVisitorReviewFormStatus = document.getElementById("createVisitorReviewFormStatus")
+
+    createVisitorReviewForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(createVisitorReviewForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                createVisitorReviewFormStatus.innerText = response.msg
+                if(response.error == 1) {
+                    createVisitorReviewFormStatus.style.color = "red"
+                } else {
+                    createVisitorReviewFormStatus.style.color = "green"
+                }
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/employee/create_visitor_review", true)
+        xhr.send(formData)
+    })
+</script>

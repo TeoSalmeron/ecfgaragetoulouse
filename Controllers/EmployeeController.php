@@ -21,6 +21,12 @@ class EmployeeController extends Controller
         echo json_encode($response);
     }
 
+    public function create_visitor_review() {
+        require_once ROOT . '/Controllers/functions/create_visitor_review.php';
+        $response = create_visitor_review();
+        echo json_encode($response);
+    }
+
     public function create_car() {
         require_once ROOT . '/Controllers/functions/create_car.php';
         $response = create_car();

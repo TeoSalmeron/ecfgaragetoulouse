@@ -168,7 +168,7 @@ $color_2 : #494949;
 }
 
 .home_services {
-    padding: 50px 20px;
+    padding: 50px 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,6 +244,49 @@ $color_2 : #494949;
             font-size: 1rem;
         }
     }
+}
+
+.home_create_review {
+    padding: 25px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: auto;
+
+    h2 {
+        font-family: $font;
+        color: $color_1;
+        font-size: $font_size_title;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: $font_condensed;
+        color: $color_2;
+        font-size: $font_size_paragraph;
+        text-align: center;
+    }
+
+    #createVisitorReviewForm {
+        font-family: $font_condensed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form_group {
+            margin: 20px 0px;
+        }
+        
+        textarea {
+            margin-bottom: 30px;
+            max-width: 500px;
+            max-height: 300px;
+        }
+    }
+
 }
 // END HOME
 

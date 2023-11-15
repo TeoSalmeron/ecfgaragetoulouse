@@ -68,6 +68,7 @@
                 </select> / 5
             </div>
             <label for="comment">Commentaire :</label>
+            <br>
             <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Insérez le commentaire"></textarea>
             <button type="submit" class="button">
                 VALIDER
