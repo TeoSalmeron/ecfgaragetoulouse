@@ -71,7 +71,7 @@ function sign_in() {
                         $response = [
                             "error" => 0,
                             "msg" => "",
-                            "location" => "employe"
+                            "location" => "employee"
                         ];
                         return $response;
                     }

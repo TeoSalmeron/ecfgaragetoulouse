@@ -15,8 +15,23 @@
         <li>
             <a href="/voitures">Véhicules d'occasion</a>
         </li>
-        <li>
-            <a href="/connexion">Espace personnel</a>
-        </li>
+        <?php
+            if(isset($_SESSION["is_connected"]) && $_SESSION["is_connected"] == true) {
+                ?>
+                    <li>
+                        <a href="/<?=$_SESSION["user_role"]?>">Mon espace</a>
+                    </li>
+                    <li>
+                        <a href="/deconnexion">Se déconnecter</a>
+                    </li>
+                <?php
+            } else {
+                ?>
+                    <li>
+                        <a href="/connexion">Espace personnel</a>
+                    </li>   
+                <?php
+            }
+        ?>
     </ul>
 </nav>
