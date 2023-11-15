@@ -1,0 +1,13 @@
+<script>
+    const toggleMenu = document.getElementById("toggleMenu")
+    const closeMenu = document.getElementById("closeMenu")
+    const navList = document.getElementById("navList")
+
+    toggleMenu.addEventListener("click", () => {
+        navList.style.display = "flex"
+    })
+
+    closeMenu.addEventListener("click", () => {
+        navList.style.display = "none"
+    })
+</script>

@@ -1,1 +1,80 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+#nav {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.16);
+}
+#nav #toggleMenu {
+  border: none;
+  background: none;
+}
+#nav #toggleMenu:hover {
+  cursor: pointer;
+}
+#nav #navList {
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 200px 0px;
+  text-transform: uppercase;
+}
+#nav #navList #closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+}
+#nav #navList #closeMenu:hover {
+  cursor: pointer;
+}
+#nav #navList li a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.3rem;
+  color: #BB0102;
+  font-weight: 500;
+}
+#nav #navList li a:visited {
+  color: #494949;
+}
+
+@media screen and (min-width: 900px) {
+  #toggleMenu, #closeMenu {
+    display: none;
+  }
+  #navList {
+    display: flex !important;
+    position: unset !important;
+    height: unset !important;
+    width: unset !important;
+    padding: unset !important;
+    flex-direction: row !important;
+  }
+  #navList a {
+    font-size: 1.2rem !important;
+    margin: 0px 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
