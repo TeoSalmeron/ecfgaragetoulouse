@@ -23,7 +23,7 @@ class Db extends PDO
             $host = "localhost";
             $user = "root";
             $pass = "";
-            $dbname = "garagetoulouse";
+            $dbname = "garage_toulouse";
         }
 
         // Set DSN informations
