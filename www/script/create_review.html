@@ -1,0 +1,26 @@
+<script>
+    const createReviewForm = document.getElementById("createReviewForm")
+    let createReviewFormStatus = document.getElementById("createReviewFormStatus")
+
+    createReviewForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(createReviewForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                createReviewFormStatus.innerText = response.msg
+                if(response.error == 1) {
+                    createReviewFormStatus.style.color = "red"
+                } else {
+                    createReviewFormStatus.style.color = "green"
+                }
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/employee/create_review", true)
+        xhr.send(formData)
+    })
+</script>

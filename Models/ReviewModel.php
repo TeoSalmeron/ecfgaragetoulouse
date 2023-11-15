@@ -10,6 +10,7 @@ class ReviewModel extends Model {
     private int $score;
     private string $date;
     private string $comment;
+    private int $verified;
     private int $garage_id;
 
     public function __construct() {
@@ -112,6 +113,26 @@ class ReviewModel extends Model {
     public function setGarage_id($garage_id)
     {
         $this->garage_id = $garage_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of verified
+     */ 
+    public function getVerified()
+    {
+        return $this->verified;
+    }
+
+    /**
+     * Set the value of verified
+     *
+     * @return  self
+     */ 
+    public function setVerified($verified)
+    {
+        $this->verified = $verified;
 
         return $this;
     }

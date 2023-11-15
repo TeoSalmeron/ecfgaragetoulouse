@@ -195,6 +195,50 @@
   margin: 20px 0px;
 }
 
+.employee_pannel {
+  width: 100%;
+  height: auto;
+  padding: 140px 20px;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-align: center;
+}
+.employee_pannel h2 {
+  color: #BB0102;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+.employee_pannel .create_review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.employee_pannel .create_review form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+.employee_pannel .create_review form .form_group {
+  margin: 20px 0px;
+}
+.employee_pannel .create_review form label {
+  color: #494949;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.employee_pannel .create_review form textarea {
+  padding: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.employee_pannel .create_review form textarea:focus {
+  outline: none;
+}
+
 @media screen and (min-width: 900px) {
   #toggleMenu, #closeMenu {
     display: none;

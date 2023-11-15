@@ -263,6 +263,58 @@ $color_2 : #494949;
 }
 // END ADMIN PANNEL
 
+// EMPLOYEE PANNEL
+.employee_pannel {
+    width: 100%;
+    height: auto;
+    padding: 140px 20px;
+    font-family: $font;
+    text-align: center;
+
+    h2 {
+        color: $color_1;
+        font-family: $font;
+        font-size: $font_size_title;
+        text-transform: uppercase;
+    }
+
+    .create_review {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: $font_condensed;
+
+            .form_group {
+                margin: 20px 0px;
+            }
+            
+            label {
+                color: $color_2;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            textarea {
+                padding: 5px;
+                font-family: $font;
+                width: 100%;
+                margin-bottom: 40px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+// END EMPLOYEE PANNEL
+
 
 // MEDIA QUERIES
 
