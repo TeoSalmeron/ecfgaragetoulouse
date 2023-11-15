@@ -278,6 +278,43 @@ $color_2 : #494949;
         text-transform: uppercase;
     }
 
+    .create_car {
+        padding: 40px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-family: $font_condensed;
+            padding: 0px 20px;
+
+            small {
+                text-align: start;
+            }
+
+            .form_group {
+                display: flex;
+                margin: 10px 0px;
+
+                label {
+                    margin-right: 10px;
+                    color: $color_1;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+
+            button {
+                align-self: center;
+            }
+        }
+    }
+
     .create_review {
         display: flex;
         flex-direction: column;
@@ -312,6 +349,8 @@ $color_2 : #494949;
             }
         }
     }
+
+    
 }
 // END EMPLOYEE PANNEL
 

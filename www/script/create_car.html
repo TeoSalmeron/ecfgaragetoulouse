@@ -1,0 +1,26 @@
+<script>
+    const createCarForm = document.getElementById("createCarForm")
+    let createCarFormStatus = document.getElementById("createCarFormStatus")
+
+    createCarForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(createCarForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                createCarFormStatus.innerText = response.msg
+                if(response.error == 1) {
+                    createCarFormStatus.style.color = "red"
+                } else {
+                    createCarFormStatus.style.color = "green"
+                }
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/employee/create_car", true)
+        xhr.send(formData)
+    })
+</script>

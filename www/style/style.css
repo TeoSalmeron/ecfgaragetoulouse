@@ -208,6 +208,37 @@
   font-size: 42px;
   text-transform: uppercase;
 }
+.employee_pannel .create_car {
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.employee_pannel .create_car form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  padding: 0px 20px;
+}
+.employee_pannel .create_car form small {
+  text-align: start;
+}
+.employee_pannel .create_car form .form_group {
+  display: flex;
+  margin: 10px 0px;
+}
+.employee_pannel .create_car form .form_group label {
+  margin-right: 10px;
+  color: #BB0102;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.employee_pannel .create_car form button {
+  align-self: center;
+}
 .employee_pannel .create_review {
   display: flex;
   flex-direction: column;

@@ -8,7 +8,7 @@ class CarModel extends Model {
 
     private int $id;
     private string $model;
-    private float $price;
+    private int $price;
     private int $year;
     private string $description;
     private string $image_path;
