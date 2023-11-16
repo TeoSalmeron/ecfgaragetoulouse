@@ -86,6 +86,29 @@
     </ul>
 </section>
 
+<section class="home_cars">
+    <h2>Nos voitures d'occasion</h2>
+    <p>
+        Retrouvez un aperçu de nos voitures d'occasion à l'achat
+    </p>
+    <?php
+    $i = 0;
+        for($i = 0; $i < 3; $i++) { 
+            ?>
+                <div class="car">
+                    <h3>
+                        <?= $cars[$i]["model"] ?>
+                    </h3>
+                    <img src="/uploads/<?=$cars[$i]["image_path"]?>" alt="<?=$cars[$i]["model"]?>">
+                    <p>
+                        <?= $cars[$i]["price"] ?> €
+                    </p>
+                </div>
+            <?php
+        }
+    ?>
+</section>
+
 <section class="home_reviews">
     <h2>AVIS CLIENTS</h2>
     <p>

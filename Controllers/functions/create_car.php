@@ -75,9 +75,9 @@ function create_car() {
                                 ];
                                 return $response;
                             } else {
-                                $uniqueName = uniqid("", true);
+                                $uniqueName = uniqid("");
                                 $image_path = $uniqueName . "." . $extension;
-                                move_uploaded_file($tmpName, ROOT . '/uploads/' . $image_path);
+                                move_uploaded_file($tmpName, ROOT . '/www/uploads/' . $image_path);
                                 // Check if description is set
                                 if(empty($_POST["description"])) {
                                     $response = [

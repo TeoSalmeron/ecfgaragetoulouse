@@ -143,6 +143,51 @@
   text-align: justify;
 }
 
+.home_cars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #BB0102;
+  padding: 50px 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.home_cars h2, .home_cars p {
+  font-size: 42px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.home_cars p {
+  font-size: 20px;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+.home_cars .car {
+  width: 80%;
+  max-width: 450px;
+  height: 300px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+.home_cars .car h3 {
+  text-transform: uppercase;
+}
+.home_cars .car img {
+  width: 200px;
+}
+.home_cars .car p {
+  font-weight: 600;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-style: italic;
+  color: #BB0102;
+}
+
 .home_reviews {
   padding: 25px 20px 50px;
   display: flex;

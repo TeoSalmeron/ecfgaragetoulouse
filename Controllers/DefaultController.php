@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CarModel;
 use App\Models\GarageModel;
 use App\Models\ReviewModel;
 use App\Controllers\Controller;
@@ -12,13 +13,19 @@ class DefaultController extends Controller
     {
         $review_model = new ReviewModel;
         $reviews = $review_model->findBy(["verified" => 1]);
+
         $garage_model = new GarageModel;
         $garage = $garage_model->findBy(["id" => 1])[0];
+
+        $car_model = new CarModel;
+        $cars = $car_model->findAll();
+
+
         $this->render("home/home", [
             "title" => "Accueil",
             "garage" => $garage,
-            "reviews" => $reviews
+            "reviews" => $reviews,
+            "cars" => $cars
         ], ["nav", "delete_review", "create_visitor_review"]);
-
     }
 }
