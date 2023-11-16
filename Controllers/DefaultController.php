@@ -11,7 +11,7 @@ class DefaultController extends Controller
     public function index()
     {
         $review_model = new ReviewModel;
-        $reviews = $review_model->findAll();
+        $reviews = $review_model->findBy(["verified" => 1]);
         $garage_model = new GarageModel;
         $garage = $garage_model->findBy(["id" => 1])[0];
         $this->render("home/home", [
