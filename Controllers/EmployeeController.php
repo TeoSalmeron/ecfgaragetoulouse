@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ReviewModel;
+
 class EmployeeController extends Controller
 {
     public function index()
@@ -10,9 +12,12 @@ class EmployeeController extends Controller
             http_response_code(404);
             die("Interdiction d'accéder à cette page");
         }
+        $review_model = new ReviewModel;
+        $unmoderated_reviews = $review_model->findBy(["verified" => 0]);
         $this->render("employee/employee", [
             "title" => "Pannel d'administration - Employé",
-        ], ["nav", "create_review", "create_car"]);    
+            "unmoderated_reviews" => $unmoderated_reviews
+        ], ["nav", "create_review", "create_car", "moderate_review"]);    
     }
 
     public function create_review() {
@@ -30,6 +35,12 @@ class EmployeeController extends Controller
     public function create_car() {
         require_once ROOT . '/Controllers/functions/create_car.php';
         $response = create_car();
+        echo json_encode($response);
+    }
+
+    public function moderate_review() {
+        require_once ROOT . '/Controllers/functions/moderate_review.php';
+        $response = moderate_review();
         echo json_encode($response);
     }
 

@@ -49,6 +49,42 @@
         </form>
     </section>
     <!-- END CREATE CAR SECTION -->
+
+    <!-- MODERATE REVIEW SECTION -->
+    <section class="moderate_review">
+        <h2>Modérer les avis clients</h2>
+        <p>
+            Retrouvez la liste des nouveaux avis à modérer
+        </p>
+        <p id="moderateReviewStatus"></p>
+        <?php
+            foreach($unmoderated_reviews as $u) {
+                ?>
+                    <div class="unmoderated_review" id="review<?=$u["id"]?>">
+                        <p class="review_score">
+                            <?= $u["score"] ?> / 5
+                        </p>
+                        <p class="review_date">
+                            <?= $u["date"] ?>
+                        </p>
+                        <p class="review_comment">
+                            <?= $u["comment"] ?>
+                        </p>
+                        <form action="" method="post" class="unmoderated_review_form" accept-charset="utf-8">
+                            <input type="checkbox" name="id" id="id" checked value="<?=$u["id"]?>" style="display:none">
+                            <select name="action" id="action">
+                                <option value="delete">Supprimer</option>
+                                <option value="confirm">Valider</option>
+                            </select>
+                            <button class="button" value="confirm" type="submit">VALIDER</button>
+                        </form>
+                    </div>
+                <?php
+            }
+        ?>
+    </section>
+    <!-- END MODERATE REVIEW SECTION -->
+
     <!-- CREATE REVIEW SECTION -->
     <section class="create_review">
         <h2>

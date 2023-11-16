@@ -1,0 +1,30 @@
+<script>
+    const unmoderatedReviewForms = document.getElementsByClassName("unmoderated_review_form")
+    const moderateReviewStatus = document.getElementById("moderateReviewStatus")
+
+    for(let form of unmoderatedReviewForms) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const formData = new FormData(form)
+            var xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.response
+                moderateReviewStatus.innerText = response.msg
+                if(response.error == 1) {
+                    moderateReviewStatus.style.color = "red"
+                } else {
+                    moderateReviewStatus.style.color = "green"
+                }
+                let review = document.getElementById("review" + formData.get("id"))
+                review.style.display = "none"
+            } else if (xhr.status == 4) {
+                console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+            }
+            }
+            xhr.responseType = "json"
+            xhr.open("POST", "/employee/moderate_review", true)
+            xhr.send(formData)
+        })
+    }
+</script>

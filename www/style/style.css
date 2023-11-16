@@ -170,6 +170,8 @@
   flex-direction: column;
   align-items: start;
   margin: 30px 0px;
+  max-width: 500px;
+  width: 100%;
 }
 .home_reviews .review .score {
   color: #BB0102;
@@ -320,6 +322,40 @@
 }
 .employee_pannel .create_car form button {
   align-self: center;
+}
+.employee_pannel .moderate_review {
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.employee_pannel .moderate_review #moderateReviewStatus {
+  margin: 10px 0px;
+}
+.employee_pannel .moderate_review .unmoderated_review {
+  border: 2px solid #BB0102;
+  margin: 20px 0px;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+}
+.employee_pannel .moderate_review .unmoderated_review p {
+  margin: 10px 0px;
+}
+.employee_pannel .moderate_review .unmoderated_review .review_score {
+  color: #BB0102;
+  font-weight: 600;
+}
+.employee_pannel .moderate_review .unmoderated_review .review_date {
+  font-style: italic;
+}
+.employee_pannel .moderate_review .unmoderated_review form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.employee_pannel .moderate_review .unmoderated_review form button {
+  margin: 10px 0px;
 }
 .employee_pannel .create_review {
   display: flex;

@@ -223,6 +223,8 @@ $color_2 : #494949;
         flex-direction: column;
         align-items: start;
         margin: 30px 0px;
+        max-width: 500px;
+        width: 100%;
 
         .score {
             color: $color_1;
@@ -406,6 +408,47 @@ $color_2 : #494949;
 
             button {
                 align-self: center;
+            }
+        }
+    }
+
+    .moderate_review {
+        padding: 50px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #moderateReviewStatus {
+            margin: 10px 0px;
+        }
+
+        .unmoderated_review {
+            border: 2px solid $color_1;
+            margin: 20px 0px;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            p {
+                margin: 10px 0px;
+            }
+
+            .review_score {
+                color: $color_1;
+                font-weight: 600;
+            }
+
+            .review_date {
+                font-style: italic;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                button {
+                    margin: 10px 0px;
+                }
             }
         }
     }
