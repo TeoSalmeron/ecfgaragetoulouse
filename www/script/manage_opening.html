@@ -1,0 +1,28 @@
+<script>
+    const manageOpeningForm = document.getElementById("manageOpeningForm")
+    const manageOpeningFormStatus = document.getElementById("manageOpeningFormStatus")
+
+    manageOpeningForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(manageOpeningForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            let response = xhr.response
+            manageOpeningFormStatus.innerText = response.msg
+            if(response.error == 1) {
+                manageOpeningFormStatus.style.color = "red"
+            } else {
+                manageOpeningFormStatus.style.color = "green"
+
+            }
+        } else if (xhr.status == 4) {
+            console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+        }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/admin/manage_opening", true)
+        xhr.send(formData)
+    })
+
+</script>

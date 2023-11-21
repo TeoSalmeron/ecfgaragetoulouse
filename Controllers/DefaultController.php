@@ -6,6 +6,7 @@ use App\Models\CarModel;
 use App\Models\GarageModel;
 use App\Models\ReviewModel;
 use App\Controllers\Controller;
+use App\Models\DayScheduleModel;
 
 class DefaultController extends Controller
 {
@@ -20,12 +21,16 @@ class DefaultController extends Controller
         $car_model = new CarModel;
         $cars = $car_model->findAll();
 
+        $schedule_model = new DayScheduleModel;
+        $schedules = $schedule_model->findAll();
+
 
         $this->render("home/home", [
             "title" => "Accueil",
             "garage" => $garage,
             "reviews" => $reviews,
-            "cars" => $cars
+            "cars" => $cars,
+            "schedules" => $schedules
         ], ["nav", "delete_review", "create_visitor_review"]);
     }
 }

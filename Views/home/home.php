@@ -171,3 +171,7 @@
         </button>
     </form>
 </section>
+
+<?php
+    require_once ROOT . '/Views/templates/footer.php';
+?>

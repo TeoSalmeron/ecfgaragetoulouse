@@ -1,0 +1,53 @@
+<script>
+    const carFilterForm = document.getElementById("carFilterForm")
+    const carFilterFormStatus = document.getElementById("carFilterFormStatus")
+    const carsDisplay = document.getElementById("cars_display")
+
+    carFilterForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(carFilterForm)
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            let response = xhr.response
+            carFilterFormStatus.innerText = response.msg
+            if(response.error == 1) {
+                carFilterFormStatus.style.color = "red"
+            } else {
+                carFilterFormStatus.style.color = "green"
+                carsDisplay.innerHTML = ""
+                for(let car of response.filtered_cars) {
+                    const carDiv = document.createElement("div")
+                    carDiv.classList.add("car")
+                    const carModel = document.createElement("h3")
+                    carModel.innerText = car.model
+                    const carImage = document.createElement("img")
+                    carImage.src = "/uploads/" + car.image_path
+                    const carPrice = document.createElement("p")
+                    carPrice.innerText = "Prix : " + car.price + " €"
+                    const carKilometers = document.createElement("p")
+                    carKilometers.innerText = "Kilométrage : " + car.kilometers + "km"
+                    const carYear = document.createElement("p")
+                    carYear.innerText = "Année : " + car.year
+                    const carDescription = document.createElement("p")
+                    carDescription.innerText = "Description : " + he.decode(car.description)
+                    carDiv.appendChild(carModel)
+                    carDiv.appendChild(carImage)
+                    carDiv.appendChild(carPrice)
+                    carDiv.appendChild(carKilometers)
+                    carDiv.appendChild(carYear)
+                    carDiv.appendChild(carDescription)
+                    carsDisplay.appendChild(carDiv)
+
+                }
+            }
+        } else if (xhr.status == 4) {
+            console.log("ERREUR LORS DE L'ENVOI DU FORMULAIRE")
+        }
+        }
+        xhr.responseType = "json"
+        xhr.open("POST", "/voitures/filter_car", true)
+        xhr.send(formData)
+    })
+
+</script>

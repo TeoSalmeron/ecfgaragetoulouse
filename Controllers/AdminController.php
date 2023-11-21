@@ -12,12 +12,18 @@ class AdminController extends Controller
         }
         $this->render("admin/admin", [
             "title" => "Pannel d'administration",
-        ], ["nav", "create_employee"]);    
+        ], ["nav", "create_employee", "manage_opening"]);    
     }
 
     public function create_employee() {
         require_once ROOT . '/Controllers/functions/create_employee.php';
         $response = create_employee();
+        echo json_encode($response);
+    }
+
+    public function manage_opening() {
+        require_once ROOT . '/Controllers/functions/manage_opening.php';
+        $response = manage_opening();
         echo json_encode($response);
     }
 }
