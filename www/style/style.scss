@@ -382,6 +382,9 @@ $color_2 : #494949;
     height: auto;
     padding: 140px 20px;
     font-family: $font;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
         color: $color_1;
@@ -394,6 +397,7 @@ $color_2 : #494949;
     .create_employee {
         display: flex;
         flex-direction: column;
+        margin-bottom: 50px;
 
         form {
             display: flex;
@@ -406,6 +410,17 @@ $color_2 : #494949;
 
             input {
                 margin: 20px 0px;   
+            }
+        }
+    }
+
+    .manage_schedule {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .form-group {
+                margin: 10px 0px;
             }
         }
     }
